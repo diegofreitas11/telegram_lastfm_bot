@@ -31,7 +31,6 @@ bot.command('comp', (ctx) => {
     var secUser = {'username': split[2], 'top': [], 'total': 0};
     const limit = split[3];
     const periodObj = toPeriod(split[4]);
-    var count;
     
     console.log(periodObj);
     lfm.user.getTopArtists({
@@ -57,8 +56,12 @@ bot.command('comp', (ctx) => {
                     'period': periodObj.period,
                     'limit': limit
                 }, (err, top) => {
-                    if(err){throw err;}
-                    
+                    if(err){
+                        if(err.error === 6){
+                            bot.telegram.sendMessage(chatID, 'usuário não encontrado');
+                        }
+                        return;
+                    }
                     top.artist.forEach(artist => {
                         secUser.top.push({'name': artist.name, 'plays': artist.playcount});
                         secUser.total+=parseInt(artist.playcount);
