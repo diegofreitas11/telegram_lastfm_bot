@@ -41,8 +41,9 @@ bot.command('comp', (ctx) => {
         'limit': limit
     }, (err, top) => {
         if(err){ 
-            if(err.error === '6')
+            if(err.error === 6){
                 bot.telegram.sendMessage(chatID, 'usuário não encontrado');
+            }
             return;
         }
         top.artist.forEach(artist =>{
