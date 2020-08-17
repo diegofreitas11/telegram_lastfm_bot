@@ -1,0 +1,17 @@
+{
+  "name": "teste-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lastfmapi": "^0.1.1",
+    "node-telegram-bot-api": "^0.40.0",
+    "telegraf": "^3.38.0",
+    "telegraf-keyboard": "^1.1.2"
+  }
+}
