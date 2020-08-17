@@ -40,7 +40,11 @@ bot.command('comp', (ctx) => {
         'period': periodObj.period,
         'limit': limit
     }, (err, top) => {
-        if(err){throw err;}
+        if(err){ 
+            if(err.error === '6')
+                bot.telegram.sendMessage(chatID, 'usuário não encontrado');
+            return;
+        }
         top.artist.forEach(artist =>{
             firstUser.top.push({'name': artist.name, 'plays': artist.playcount});
             firstUser.total+=parseInt(artist.playcount)
