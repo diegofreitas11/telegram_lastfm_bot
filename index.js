@@ -2,12 +2,12 @@ const { Telegraf } = require('telegraf');
 const LastfmAPI = require('lastfmapi');
 
 
-const TOKEN = `TELEGRAM TOKEN TÁ AQUI`;
+const TOKEN = `1087565382:AAGHcZaBnVMtJ1sOuQWvjbjLZbfK4D6H424`;
 const bot = new Telegraf(TOKEN);
 
 const lfm = new LastfmAPI({
-	'api_key' : 'API KEY VAI AQUI',
-	'secret' : 'SECRET VAI AQUI'
+	'api_key' : '87388aa0974f3cc9ddf2e4adac39a39e',
+	'secret' : '3819563ca5a126a2fa46b992c52eb6ef'
 });
 
 const membros = ['thepaulbranco', 'fltngboy', 'itsdanielyall', 'mad-inside', 
