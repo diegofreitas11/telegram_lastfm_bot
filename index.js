@@ -10,8 +10,8 @@ const URL = process.env.URL || 'https://total-fm.herokuapp.com';
 
 const bot = new Telegraf(TOKEN);
 
-bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
-bot.startWebhook(`/bot${API_TOKEN}`, null, PORT)
+bot.telegram.setWebhook(`${URL}/bot${TOKEN}`);
+bot.startWebhook(`/bot${TOKEN}`, null, PORT)
 
 const lfm = new LastfmAPI({
 	'api_key' : '87388aa0974f3cc9ddf2e4adac39a39e',
