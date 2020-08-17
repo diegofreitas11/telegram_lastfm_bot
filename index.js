@@ -3,7 +3,7 @@ const LastfmAPI = require('lastfmapi');
 
 
 const TOKEN = `1087565382:AAGHcZaBnVMtJ1sOuQWvjbjLZbfK4D6H424`;
-const bot = new Telegraf(TOKEN, {port: process.env.port});
+const bot = new Telegraf(TOKEN, {port: process.env.port || 3000});
 
 const lfm = new LastfmAPI({
 	'api_key' : '87388aa0974f3cc9ddf2e4adac39a39e',
