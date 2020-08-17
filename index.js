@@ -132,10 +132,12 @@ bot.command('ra', (ctx) => {
     const chatID = ctx.chat.id;
     const album = ctx.message.text.replace(ctx.message.text.split(' ')[0], "");
     const split = album.split('-');
-    if(split[0])
+    if(split[0] && split[1]){
         var artist = album.split('-')[0].trim();
-    if(split[1])
         var title = album.split('-')[1].trim();
+    }else{
+        bot.telegram.sendMessage(chatID, 'deu errado fia'); return;
+    }
 
     const ranking = [];
     let itemsProcessed = 0;
@@ -163,10 +165,12 @@ bot.command('rm', (ctx) => {
     const chatID = ctx.chat.id;
     const track = ctx.message.text.replace(ctx.message.text.split(' ')[0], "");
     const split = track.split('-');
-    if(split[0])
+    if(split[0] && split[1]){
         var artist = track.split('-')[0].trim();
-    if(split[1])
         var title = track.split('-')[1].trim();
+    }else{
+        bot.telegram.sendMessage(chatID, 'deu errado fia'); return;
+    }
 
     const ranking = [];
     let itemsProcessed = 0;
