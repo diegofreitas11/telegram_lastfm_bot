@@ -113,7 +113,9 @@ bot.command('r', (ctx) => {
         lfm.artist.getInfo({'artist': artist, 
         'api_key' : lfm.api_key, 
         'username' : membro}, (err, info) => {
-            if(err) {throw err;};
+            if(err) {
+                bot.telegram.sendMessage(chatID, 'deu errado fia');
+            }
             ranking.push({'user': membro, 'plays': info.stats.userplaycount})
             itemsProcessed++;
             if(itemsProcessed === membros.length){
@@ -144,7 +146,7 @@ bot.command('ra', (ctx) => {
         'artist': artist, 
         'api_key' : lfm.api_key, 
         'username' : membro}, (err, info) => {
-            if(err) {throw err;};
+            if(err) {bot.telegram.sendMessage(chatID, 'deu errado fia');};
             ranking.push({'user': membro, 'plays': info.userplaycount})
             itemsProcessed++;
             if(itemsProcessed === membros.length){
@@ -175,7 +177,7 @@ bot.command('rm', (ctx) => {
         'artist': artist, 
         'api_key' : lfm.api_key, 
         'username' : membro}, (err, info) => {
-            if(err) {throw err;};
+            if(err) {bot.telegram.sendMessage(chatID, 'deu errado fia');};
             ranking.push({'user': membro, 'plays': info.userplaycount})
             itemsProcessed++;
             if(itemsProcessed === membros.length){
@@ -198,7 +200,7 @@ bot.command('list', (ctx) => {
         lfm.user.getTopArtists({'user': username, 'api_key':lfm.api_key, 
                                 'period': 'overall', 'limit': limit},
         (err, top) => {
-            if(err){throw err;}
+            if(err){bot.telegram.sendMessage(chatID, 'deu errado fia');}
             top.artist.forEach((artist, i)=>{
                 var found = chart.find(element => element.nome === artist.name);
                 if(!found){
