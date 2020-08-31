@@ -1,2 +1,2 @@
 # telegram_lastfm_bot
-Um bot no telegram que usa informações do last.fm. Por enquanto os perfis são fixos pois é utilizado num grupo de amigos específico mas pretendo dinamizar em breve.
+Um bot no telegram que usa informações do last.fm, com intuito de aprender a lidar com APIs externas. Os perfis do programa são referentes a um grupo de amigos. Por questões de segurança removi os tokens de Telegram e LastFm que podem ser gerados gratuitamente.
