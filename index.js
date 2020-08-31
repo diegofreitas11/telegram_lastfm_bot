@@ -2,7 +2,7 @@ const { Telegraf } = require('telegraf');
 const LastfmAPI = require('lastfmapi');
 
 
-const TOKEN = `1087565382:AAGHcZaBnVMtJ1sOuQWvjbjLZbfK4D6H424`;
+const TOKEN = `TELEGRAM TOKEN AQUI`;
 
 
 const PORT = process.env.PORT || 3000;
@@ -14,8 +14,8 @@ bot.telegram.setWebhook(`${URL}/bot${TOKEN}`);
 bot.startWebhook(`/bot${TOKEN}`, null, PORT)
 
 const lfm = new LastfmAPI({
-	'api_key' : '87388aa0974f3cc9ddf2e4adac39a39e',
-	'secret' : '3819563ca5a126a2fa46b992c52eb6ef'
+	'api_key' : 'CHAVE DO LAST FM API AQUI',
+	'secret' : 'SECRET AQUI'
 });
 
 const membros = ['thepaulbranco', 'fltngboy', 'itsdanielyall', 'mad-inside', 
